@@ -43,7 +43,6 @@ for(int i= 0; i < SinUso; i++ )
 }
 *suma = sumaN(a,n);
 
-
 }
 
 /*
@@ -53,15 +52,21 @@ crearPersona(...), la cual crea una nueva persona con
 los datos correspondientes y retorna un puntero al dato 
 recién creado.
 */
+
 typedef struct {
   char nombre[30];
   char rut[11];
   int edad;
 } Persona;
 
-
 Persona* crearPersona(char nombre[], char rut[], int edad) {
-   return NULL;
+  
+  Persona *Vector = (Persona*) malloc(sizeof(Persona*));
+  strcpy(Vector -> nombre, nombre);
+  strcpy(Vector -> rut, rut);
+  Vector -> edad= edad;
+
+   return Vector;
 }
 
 /*
